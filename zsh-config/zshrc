@@ -1,0 +1,35 @@
+#
+# zsh starting configuration.
+#
+
+# Path to oh-my-zsh installation
+export ZSH="${HOME}/.config/oh-my-zsh"
+export ZSH_CONFIG="${HOME}/.config/zsh-config"
+
+# Plugins
+plugins=(
+	git
+	osx
+	bgnotify
+	zsh-syntax-highlighting
+	zsh-autosuggestions
+)
+
+# Init oh-my-zsh
+source "${ZSH}/oh-my-zsh.sh"
+
+# Source vars, paths, aliases and personal
+source "${ZSH_CONFIG}/vars.zsh"
+source "${ZSH_CONFIG}/paths.zsh"
+source "${ZSH_CONFIG}/aliases.zsh"
+
+# Init starship
+eval "$(starship init zsh)"
+
+# If tmux session exist, attach to it.
+# Else create new one.
+if [[ $(tmux ls 2> /dev/null) ]] then
+	eval "$(tmux attach -t 0)"
+else
+	eval "$(tmux -f ${TMUX_CONFIG})"
+fi

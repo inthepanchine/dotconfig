@@ -1,15 +1,10 @@
 --
--- Keymappings file
---
--- Note: this file contains general keymappings, for plugins-specific
--- keymappings, they are in the plugin's configuration file
+-- Keymappings.
 --
 
--- Base keymaps options
-local baseOptions = { silent = true, noremap = true }
+local opt = require("options")
 
--- Set leader key to space
-vim.g.mapleader = " "
+-- Base
+vim.g.mapleader = opt.leader
+vim.api.nvim_set_keymap("i", opt.escRemap, "<ESC>", opt.remapOpt)
 
--- <ESC> to jh
-vim.api.nvim_set_keymap("i", "jh", "<ESC>", baseOptions)

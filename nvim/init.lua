@@ -1,8 +1,7 @@
 --
--- NeoVim configuration
+-- NeoVim configuration.
 --
 
--- Require all external files
--- Base (settings and keymappings)
+-- Base settings
 require("settings")
 require("keymappings")

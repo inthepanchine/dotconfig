@@ -28,3 +28,20 @@ export PATH="${PATH}:${CLANGD_PATH}"
 # yarn path
 export YARN_GLOBAL="$(yarn global bin)"
 export PATH="${PATH}:${YARN_GLOBAL}"
+
+# Dev path
+export DEV="${HOME}/Developer"
+export PATH="${PATH}:${DEV}"
+
+# Golang bin path
+export GO_BIN="${CONFIG}/go/bin"
+export PATH="${PATH}:${GO_BIN}"
+
+# Documents path
+export DOC="${HOME}/Documents"
+export PATH="${PATH}:${DOC}"
+
+# NVM path
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

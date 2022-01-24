@@ -9,7 +9,7 @@ export ZSH_CONFIG="${HOME}/.config/zsh-config"
 # Plugins
 plugins=(
 	git
-	osx
+	macos
 	bgnotify
 	zsh-syntax-highlighting
 	zsh-autosuggestions
@@ -26,10 +26,3 @@ source "${ZSH_CONFIG}/aliases.zsh"
 # Init starship
 eval "$(starship init zsh)"
 
-# If tmux session exist, attach to it.
-# Else create new one.
-if [[ $(tmux ls 2> /dev/null) ]] then
-	eval "$(tmux attach -t 0)"
-else
-	eval "$(tmux -f ${TMUX_CONFIG})"
-fi

@@ -26,7 +26,7 @@ export CLANGD_PATH="$(brew --prefix llvm)/bin"
 export PATH="${PATH}:${CLANGD_PATH}"
 
 # yarn path
-export YARN_GLOBAL="$(yarn global bin)"
+export YARN_GLOBAL="/usr/local/bin"
 export PATH="${PATH}:${YARN_GLOBAL}"
 
 # Dev path
@@ -45,3 +45,11 @@ export PATH="${PATH}:${DOC}"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# LTeX
+export LTEX_PATH="${HOME}/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin"
+export PATH="${PATH}:${LTEX_PATH}"
+
+# TexLab
+export TEXLAB_PATH="${HOME}/.local/share/nvim/lsp_servers/latex"
+export PATH="${PATH}:${TEXLAB_PATH}"

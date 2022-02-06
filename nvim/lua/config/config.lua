@@ -2,6 +2,9 @@
 -- General config file for plugins that require small configuration.
 --
 
+-- Options
+local opt = require("options")
+
 -- WebIcons
 require("nvim-web-devicons").setup{ default = true }
 
@@ -19,3 +22,11 @@ require("lualine").setup({
 	}
 })
 
+-- Tex options
+vim.g["tex_flavor"] = "latex"
+
+-- UndoTree
+vim.keymap.set("n", "<leader>ut", ":UndotreeToggle<CR>", opt.remapOpt)
+
+-- Grammar guard
+require("grammar-guard").init()

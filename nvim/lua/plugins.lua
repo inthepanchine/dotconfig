@@ -21,31 +21,46 @@ return require("packer").startup(function(use)
 	use {
 		"neovim/nvim-lspconfig",
 		"nvim-treesitter/nvim-treesitter",
+		"williamboman/nvim-lsp-installer",
+		"brymer-meneses/grammar-guard.nvim",
 		run = ":TSUpdate",
 	}
 
-	-- Code completition
+	-- Code completition + snippet
 	use {
+		"L3MON4D3/LuaSnip",
+		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/nvim-cmp",
-		requires = { {"hrsh7th/cmp-nvim-lsp"} },
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path"
 	}
 
 	-- Fuzzy finder
 	use {
 		"nvim-telescope/telescope.nvim",
-		requires = {
-			{"nvim-lua/plenary.nvim"}, {"kyazdani42/nvim-web-devicons"}
-		}
+		"nvim-lua/plenary.nvim",
+		"nvim-lua/popup.nvim",
+		{"nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 	}
 
-	-- Colorscheme
-	use { "olimorris/onedarkpro.nvim" }
+	-- Colorscheme + icons
+	use { "olimorris/onedarkpro.nvim", "kyazdani42/nvim-web-devicons"}
 
 	-- Autopairs
 	use { "windwp/nvim-autopairs" }
 
 	-- Lualine
 	use { "nvim-lualine/lualine.nvim"  }
+
+	-- Git support
+	use { "tpope/vim-fugitive", "airblade/vim-gitgutter" }
+
+	-- Undo tree
+	use { "mbbill/undotree" }
+
+	-- Rust intergration
+	use { "rust-lang/rust.vim" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

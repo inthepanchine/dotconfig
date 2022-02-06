@@ -2,31 +2,32 @@
 -- Lua language server configuration.
 --
 
-local runtime_path = vim.split(package.path, ';')
+local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require'lspconfig'.sumneko_lua.setup {
-	settings = {
-		Lua = {
-			runtime = {
-				version = 'LuaJIT',
-				-- Setup your lua path
-				path = runtime_path,
-			},
+local M = {}
 
-			diagnostics = {
-				globals = {'vim'},
-			},
+M.settings = {
+	Lua = {
+		runtime = {
+			version = "LuaJIT",
+			-- Setup your lua path
+			path = runtime_path,
+		},
 
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
+		diagnostics = {
+			globals = { "vim" },
+		},
 
-			telemetry = {
-				enable = false,
-			},
+		workspace = {
+			library = vim.api.nvim_get_runtime_file("", true),
+		},
+
+		telemetry = {
+			enable = false,
 		},
 	},
 }
 
+return M

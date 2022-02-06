@@ -12,8 +12,8 @@ local M = {}
 -- If some extra options are specfied, pass them as param.
 M.project_files = function(add_opts)
 	local opts = utils.merge({ hidden = true }, add_opts)
-	local ok = pcall(require"telescope.builtin".git_files, opts)
-	if not ok then require"telescope.builtin".find_files(opts) end
+	local ok = pcall(require("telescope.builtin").git_files, opts)
+	if not ok then require("telescope.builtin").find_files(opts) end
 end
 
 -- Open finder in ~/.config.
@@ -25,17 +25,34 @@ M.search_dotfiles = function()
 end
 
 -- Remaps
-vim.api.nvim_set_keymap(
+vim.keymap.set(
 	"n",
 	"<leader>tp",
-	":lua require(\"config/telescope\").project_files({})<CR>",
+	function() require("config/telescope").project_files({}) end,
 	opt.remapOpt
 )
-vim.api.nvim_set_keymap(
+vim.keymap.set(
 	"n",
-	"<leader>vrc",
-	":lua require(\"config/telescope\").search_dotfiles()<CR>",
+	"<leader>dl",
+	function() return require("telescope.builtin").diagnostics() end,
 	opt.remapOpt
 )
+vim.keymap.set("n", "<leader>vrc", M.search_dotfiles, opt.remapOpt)
+vim.keymap.set(
+	"n",
+	"<leader>tf",
+	function() return require("telescope.builtin").current_buffer_fuzzy_find() end,
+	opt.remapOpt
+)
+
+-- Setup
+require("telescope").setup({
+	defaults = {
+		prompt_prefix = " $ "
+	}
+})
+
+-- Plugins
+require("telescope").load_extension("fzf")
 
 return M

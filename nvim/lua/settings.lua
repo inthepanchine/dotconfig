@@ -1,40 +1,39 @@
 --
--- All of the `set` options.
+-- All of the general `set` options.
 --
 
 local opt = require("options")
 
 -- Number options.
-vim.o.nu = true
-vim.o.rnu = true
+vim.opt.nu = true
+vim.opt.rnu = true
 
 -- Search options.
-vim.o.ignorecase = true
-vim.o.hlsearch = false
-vim.o.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 -- Indentation.
-vim.o.autoindent = true
-vim.o.shiftwidth = opt.tabWidth
-vim.o.tabstop = opt.tabWidth
-vim.o.expandtab = not opt.useTab
-vim.o.list = true
-vim.o.listchars = "tab:| "
+vim.opt.autoindent = true
+vim.opt.shiftwidth = opt.tabWidth
+vim.opt.tabstop = opt.tabWidth
+vim.opt.expandtab = not opt.useTab
+vim.opt.list = true
+vim.opt.listchars = "tab:| "
 
 -- Line style.
-vim.o.wrap = false
+vim.opt.wrap = false
 
 -- Files style.
-vim.o.hidden = true
-vim.o.swapfile = false
-vim.o.backup = false
-vim.o.undodir = vim.fn.stdpath("config").."/undodir"
-vim.o.undofile = true
+vim.opt.hidden = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = vim.fn.stdpath("config").."/undodir"
+vim.opt.undofile = true
 
 -- Window style.
-vim.o.scrolloff = opt.scrolloff
-vim.o.cmdheight = 2
-vim.o.colorcolumn = "80"
+vim.opt.scrolloff = opt.scrolloff
+vim.opt.cmdheight = 2
+vim.opt.colorcolumn = "80"
 vim.highlight.create("ColorColumn", { ctermbg = 67 }, false)
-vim.o.termguicolors = true
-
+vim.opt.termguicolors = true

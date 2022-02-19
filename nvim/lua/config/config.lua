@@ -24,9 +24,8 @@ require("lualine").setup({
 
 -- Tex options
 vim.g["tex_flavor"] = "latex"
+vim.g["vimtex_syntax_enabled"] = 0
+vim.g["vimtex_view_method"] = "skim"
 
 -- UndoTree
 vim.keymap.set("n", "<leader>ut", ":UndotreeToggle<CR>", opt.remapOpt)
-
--- Grammar guard
-require("grammar-guard").init()

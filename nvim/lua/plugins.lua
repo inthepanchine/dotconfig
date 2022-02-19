@@ -22,7 +22,6 @@ return require("packer").startup(function(use)
 		"neovim/nvim-lspconfig",
 		"nvim-treesitter/nvim-treesitter",
 		"williamboman/nvim-lsp-installer",
-		"brymer-meneses/grammar-guard.nvim",
 		run = ":TSUpdate",
 	}
 
@@ -61,6 +60,9 @@ return require("packer").startup(function(use)
 
 	-- Rust intergration
 	use { "rust-lang/rust.vim" }
+
+	-- Latex integration
+	use { "lervag/vimtex" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

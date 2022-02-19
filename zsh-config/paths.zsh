@@ -47,9 +47,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # LTeX
-export LTEX_PATH="${HOME}/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin"
+export LTEX_PATH="${HOME}/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/"
 export PATH="${PATH}:${LTEX_PATH}"
 
 # TexLab
 export TEXLAB_PATH="${HOME}/.local/share/nvim/lsp_servers/latex"
 export PATH="${PATH}:${TEXLAB_PATH}"
+
+# Jedi lanaguage server
+export PYLSP_PATH="${HOME}/.local/share/nvim/lsp_servers/pylsp/venv/bin/"
+export PATH="${PATH}:${PYLSP_PATH}"

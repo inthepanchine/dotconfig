@@ -61,14 +61,27 @@ require("lspconfig").sumneko_lua.setup {
 }
 
 -- Latex
+require("lspconfig").ltex.setup {
+	on_attach = attach,
+	capabilities = capabilities,
+	settings = require("lsp/ltex").settings
+}
 require("lspconfig").texlab.setup {
 	on_attach = attach,
 	capabilities = capabilities,
+	settings = {
+		latex = {
+			build = {
+				onSave = true
+			}
+		}
+	}
 }
 
--- Grammar
-require("lspconfig").grammar_guard.setup {
-	settings = require("lsp/grammar_guard")
+-- Python
+require("lspconfig").pylsp.setup {
+	on_attach = attach,
+	capabilities = capabilities,
 }
 
 -- === Config nvim-cmp ===

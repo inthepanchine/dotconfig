@@ -1,16 +1,17 @@
 --
--- NeoVim configuration.
+-- NeoVim configuration entry file.
 --
 
--- Base settings
-require("settings")
+-- Base
 require("keymappings")
-
--- Plugins
+require("settings")
 require("plugins")
 
+-- Treesitter + nvim-cmp / LSP
+require("config.treesitter")
+require("lsp.cmp")
+require("lsp.global")
+
 -- Plugins config
-require("config/config")
-require("config/telescope")
-require("config/lsp")
-require("config/treesitter")
+require("config.global")
+require("config.telescope")

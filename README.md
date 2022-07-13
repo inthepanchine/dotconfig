@@ -2,6 +2,6 @@
 
 My `~/.config` files.
 
-# License
+## License
 
 This repository is under [MIT licensed](./LICENSE)

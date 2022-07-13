@@ -12,7 +12,6 @@ M.settings = {
 	Lua = {
 		runtime = {
 			version = "LuaJIT",
-			-- Setup your lua path
 			path = runtime_path,
 		},
 

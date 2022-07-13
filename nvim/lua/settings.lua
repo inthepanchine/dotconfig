@@ -15,9 +15,9 @@ vim.opt.incsearch = true
 
 -- Indentation.
 vim.opt.autoindent = true
-vim.opt.shiftwidth = opt.tabWidth
-vim.opt.tabstop = opt.tabWidth
-vim.opt.expandtab = not opt.useTab
+vim.opt.shiftwidth = opt.tab_width
+vim.opt.tabstop = opt.tab_width
+vim.opt.expandtab = not opt.use_tab
 vim.opt.list = true
 vim.opt.listchars = "tab:| "
 
@@ -35,5 +35,6 @@ vim.opt.undofile = true
 vim.opt.scrolloff = opt.scrolloff
 vim.opt.cmdheight = 2
 vim.opt.colorcolumn = "80"
-vim.highlight.create("ColorColumn", { ctermbg = 67 }, false)
+vim.highlight.create("ColorColumn", { guibg = "#87a2bb" }, false)
 vim.opt.termguicolors = true
+vim.opt.laststatus = 3

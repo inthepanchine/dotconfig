@@ -1,5 +1,5 @@
 --
--- Telescope plugin configuration.
+-- Telescope.nvim config.
 --
 
 local opt = require("options")
@@ -24,11 +24,17 @@ M.search_dotfiles = function()
 	})
 end
 
--- Remaps
+-- === Keymappings ===
 vim.keymap.set(
 	"n",
 	"<leader>tp",
 	function() require("config/telescope").project_files({}) end,
+	opt.remapOpt
+)
+vim.keymap.set(
+	"n",
+	"<leader>ta",
+	function() require("telescope.builtin").find_files() end,
 	opt.remapOpt
 )
 vim.keymap.set(
@@ -40,19 +46,32 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>vrc", M.search_dotfiles, opt.remapOpt)
 vim.keymap.set(
 	"n",
-	"<leader>tf",
+	"<leader>ff",
 	function() return require("telescope.builtin").current_buffer_fuzzy_find() end,
 	opt.remapOpt
 )
+vim.keymap.set(
+	"n",
+	"<leader>fb",
+	function() return require("telescope.builtin").buffers() end,
+	opt.remapOpt
+)
+vim.keymap.set(
+	"n",
+	"<leader>fg",
+	function() return require("telescope.builtin").live_grep() end,
+	opt.remapOpt
+)
 
--- Setup
+-- === Setup ===
 require("telescope").setup({
 	defaults = {
 		prompt_prefix = " $ "
 	}
 })
 
--- Plugins
+-- === Plugins ===
 require("telescope").load_extension("fzf")
 
 return M
+

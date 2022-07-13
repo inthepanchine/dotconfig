@@ -1,10 +1,9 @@
 --
--- Keymappings.
+-- General keymappings.
 --
 
 local opt = require("options")
 
 -- Base
 vim.g.mapleader = opt.leader
-vim.keymap.set("i", opt.escRemap, "<ESC>", opt.remapOpt)
-
+vim.keymap.set("i", opt.esc, "<ESC>", opt.remap_opt)

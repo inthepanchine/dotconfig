@@ -1,15 +1,22 @@
 --
--- Global options.
+-- Options module.
+-- Configuration's options are defined here and exported inside a module.
 --
 
 local M = {}
 
-M.tabWidth = 4
-M.useTab = true
-M.scrolloff = 8 -- Amount of rows left before cmd.
-M.escRemap = "jh"
+-- <ESC> and <leader> mappings
+M.esc = "jh"
 M.leader = " "
-M.remapOpt = { silent = true, noremap = true }
-M.language = "it" -- Latex language
+
+-- Remap default options
+M.remap_opt = { silent = true, noremap = true }
+
+-- Tabs options
+M.tab_width = 4
+M.use_tab = true
+
+-- Window scrolloff
+M.scrolloff = 8
 
 return M
